@@ -1,0 +1,396 @@
+:root {
+     font-size: 10px;
+    --main-color: #d3ad7f;
+    --black: #131313;
+    --bg: #010103;
+    --border: 0.1rem solid rgba(255, 255, 255 0.3);
+     scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: "Roboto";
+    
+
+}
+
+
+section {
+    padding: 3rem 2rem;
+    margin: 0 auto;
+    max-width: 1200px;
+    margin-bottom: -2rem;
+}
+
+.caixa-video {
+    position: fixed;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+}
+
+.caixa-video video {
+    min-width: 100%;
+    min-height: 100%;
+    position: fixed;
+}
+
+.mascara {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    background: linear-gradient((109deg, rgba(10, 12, 16, 0.99) 15%, rgba(10, 12, 16, 0.7) 50%, rgba(10, 12, 16, 0.99) 85%));
+}
+
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    background-color: var(--bg);
+    border-bottom: var(--border);
+    width: 100vw;
+   
+}
+
+.header section {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 50;
+    padding: 1.5rem 0;
+    position: relative;
+    
+
+
+
+}
+
+.header section a img {
+    height: 7rem;
+
+}
+
+.header section nav a {
+    margin: 0 1rem;
+    font-size: 2rem;
+    color: #fff;
+    transition: 0.5s linear;
+    height: 7rem;
+
+}
+
+.header section nav a:hover {
+    color: var(--main-color);
+    border-bottom: 0.1rem solid var(--main-color);
+    padding-bottom: 0.5rem;
+
+}
+
+.caixa-principal {
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+
+}
+
+.caixa-principal div {
+    max-width: 60rem;
+    margin-top: 12rem;
+}
+
+.caixa-principal h3 {
+    color: #fff;
+    font-size: 6rem;
+    text-transform: uppercase;
+}
+
+.caixa-principal p {
+    font-size: 2rem;
+    color: #fff;
+    font-weight: lighter;
+    padding: 1rem 0;
+    line-height: 1.6;
+   
+}
+
+.botao-link {
+    background-color: var(--main-color);
+    cursor: pointer;
+    margin-top: 2rem;
+    display: inline-block;
+    font-size: 1.7rem;
+    color: #fff;
+    padding: 1rem 3rem;
+    border: none;
+    transition: 0.3s linear;
+}
+
+.botao-link:hover {
+    letter-spacing: 0.1rem;
+}
+
+.titulo {
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+    padding-bottom: 3.5rem;
+    font-size: 4rem;
+}
+
+.titulo span {
+    color: var(--main-color);
+}
+
+.sobre-container {
+    border-bottom: 50rem;
+}
+
+.caixa-sobre .sobre-container {
+    display: flex;
+    align-items: center;
+    background-color: var(--black);
+    gap: 1.5rem;
+    flex-wrap: wrap;
+
+}
+
+.caixa-sobre .sobre-container .sobre-imagem {
+    flex: 1 1 45rem;
+}
+
+.caixa-sobre .sobre-container .sobre-imagem img {
+    width: 100%;
+}
+
+.caixa-sobre .sobre-container .sobre-texto {
+    flex: 1 1 45rem;
+    padding: 2rem;
+}
+
+.caixa-sobre .sobre-container .sobre-texto h3 {
+    font-size: 3rem;
+    color: #fff;
+
+}
+
+.caixa-sobre .sobre-container .sobre-texto p {
+    font-size: 1.5rem;
+    font-weight: lighter;
+    color: #fff;
+    line-height: 1.8;
+    padding: 1rem 0;
+}
+
+.modal {
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+    gap: 12px;
+    z-index: 4;
+    position: fixed;
+    top: 50%;
+    left: -34%;
+    transform: translate(-50%, -50%);
+    transition: 1s linear;
+}
+
+.mascara-modal {
+    visibility: hidden;
+    transition: 1s linear;
+    z-index: 3;
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(109deg, rgba(10, 12, 16, 0.99) 15%, rgba(10, 12, 16, 0.7) 50%, rgba(10, 12, 16, 0.99) 85%);
+}
+
+.banner {
+    display: flex;
+    width: 116.4rem;
+    height: 20rem;
+    overflow: hidden;
+    background-color: var(--bg);
+    border-radius: 5px;
+    position: relative;
+    align-items: center;
+    margin-bottom: 2rem;
+
+}
+
+.carrossel {
+    display: flex;
+    width: 100%;
+    gap: 15px;
+    position: absolute;
+
+    animation-delay: var(--delay);
+    animation: autoRun 25s linear infinite;
+    border-radius: 20px;
+
+
+
+
+}
+
+
+.carrossel img {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+
+
+
+
+}
+
+
+@keyframes autoRun {
+    from {
+        left: 105%;
+    }
+
+    to {
+        left: -2800px;
+    }
+
+}
+
+.rodape {
+    width: 100vw;
+    height: 30rem;
+    background-color: var(--black);
+
+}
+
+.rodape .barra-inicio {
+    width: 100vw;
+    height: 5rem;
+    background-color: #836E5B;
+    margin-bottom: 5rem;
+}
+
+.rodape .barra-inicio a {
+    display: flex;
+    justify-content: center;
+    color: #fff;
+    font-size: 23px;
+    padding-top: 1rem;
+
+
+}
+
+.rodape .conteudo-rodape {
+    display: flex;
+    justify-content: space-around;
+    color: #fff;
+    font-size: 17px;
+    padding: 15px;
+
+}
+
+
+.rodape .horarios li {
+    list-style-type: none;
+    font-size: 16px;
+    padding: 3px;
+}
+
+.rodape .redes-sociais {
+    margin-left: 120px;
+
+}
+
+.rodape .redes-sociais img {
+    width: 25px;
+    margin-left: 13px;
+    margin-top: 2px;
+
+}
+
+
+.rodape .redes-sociais h3 {
+    margin-bottom: 10px;
+}
+
+.rodape .contato li {
+    list-style-type: none;
+    font-size: 16px;
+    padding: 3px;
+
+}
+
+.direitos {
+    display: flex;
+    justify-content: center;
+    color: #fff;
+    font-size: 15px;
+    margin-bottom: 12px;
+
+}
+
+.rodape hr {
+    opacity: 20%;
+
+}
+
+
+/* Sessão sobre da página*/
+
+
+
+
+.main {
+    width:800px;;
+    height:800px;
+    margin-top:8rem;
+    margin-bottom: 2rem;
+    margin-left: -30rem;
+    background-color:#fff;
+    border-radius: 5px;
+    padding: 3rem;
+    overflow: hidden;
+    opacity: 90%;
+   
+    
+       
+    
+  }
+.geral {
+    background-image: url(./img/cafe/cafe-banner-sobre4.jpg);
+      background-size:cover;
+      background-size:cover;
+    
+    
+     
+
+  
+}
+
+
+.main h3 {
+    font-size: 30px;
+    text-align: center;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+.main h2 {
+    font-size: 30px;
+    text-align: center;
+    font-weight: lighter;
+    line-height: 30px;
+  
+}
+.main p {
+    font-size: 20px;
+    font-weight: lighter;
+}
+
